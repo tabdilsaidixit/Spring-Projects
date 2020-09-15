@@ -1,0 +1,32 @@
+import java.util.*;
+public class Btree {
+	int maxHeight = 0;
+	public int solution(Tree T) {
+		if(T == null) {
+			return maxHeight;
+		}
+		List<Integer> treeNodes = new ArrayList<>();
+		traverseTree(T, treeNodes, 0);
+		return maxHeight;
+	}
+	
+	public void traverseTree(Tree T, List<Integer> treeNodes, int height ) {
+		if(height> maxHeight) {
+			maxHeight = height;
+		}
+		if(treeNodes.contains(T.val)) {
+			return;
+		}else {
+			treeNodes.add(T.val);
+			if(T.left != null) {
+				traverseTree(T.left, treeNodes, height+1);
+				treeNodes.remove(treeNodes.size() -1 );
+			}
+			if(T.right != null) {
+				traverseTree(T.right, treeNodes, height+1);
+				treeNodes.remove(treeNodes.size() -1 );
+			}
+		}
+		
+	}
+}

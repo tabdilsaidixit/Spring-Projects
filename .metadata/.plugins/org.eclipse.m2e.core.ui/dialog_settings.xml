@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="E:\Learning\Spring Udemy\cruddemo"/>
+			<item value="E:\Learning\Spring Udemy\mycoolapp"/>
+			<item value="E:\Learning\Spring Udemy\spring-crm-rest-demo"/>
+			<item value="E:\Learning\Spring Udemy\solution-code-spring-rest-demo-hello-world"/>
+			<item value="E:\Learning\Spring Udemy\jackson-databinding-json-demo"/>
+			<item value="E:\Learning\Spring Udemy\downloads\original (2)\solution-code-spring-security-demo-08-jdbc-plaintext"/>
+			<item value="E:\Learning\Spring Udemy\downloads\original (2)"/>
+			<item value="E:\Learning\Spring Udemy\Spring_security_dup\spring-security-demo-starter\spring-security-demo-01-base-app"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>

@@ -1,0 +1,91 @@
+import java.util.*;
+
+public class Segment {
+	
+	public static int segment(  int x, List<Integer> space) {
+		Objects.requireNonNull(space);
+		if (x <= 0)
+			throw new IllegalArgumentException("Window size must be positive");
+		if (space.size() < x)
+			return -1;
+		
+		int result = Integer.MIN_VALUE;
+		Deque<Integer> deque = new ArrayDeque<>();
+		for (int i = 0; i < space.size(); i++) {  // Range end index (inclusive)
+			int val = space.get(i);
+			while (!deque.isEmpty() && (val > deque.getLast() ))
+				deque.removeLast();
+			deque.addLast(val);
+			
+			int j = i + 1 - x;  // Range start index, does not overflow
+			if (j >= 0) {
+				result = Math.max(result, deque.getFirst());
+				
+			}
+		}
+		return result;
+	}
+	
+	public static int segment2(int x, List<Integer> space) {		
+		if (space == null || x <= 0) {
+			return -1;
+		}
+		int n = space.size();
+		int r = -1;
+		// store index
+		Deque<Integer> q = new ArrayDeque<>();
+		for (int i = 0; i < space.size(); i++) {
+			while (!q.isEmpty() && q.peek() < i - x + 1) {
+				q.poll();
+			}
+			while (!q.isEmpty() && space.get(q.peekLast()) < space.get(i)) {
+				q.pollLast();
+			}
+			q.offer(i);
+			if (i >= x - 1) {
+				
+				int currentMin = space.get(q.peek());
+				r = Math.max(currentMin, r);
+			}
+		}
+		return r;
+	}
+	public static int segment1(int x, List<Integer> space) {
+		
+		PriorityQueue<Integer> priorityQueue = new PriorityQueue<Integer>();
+		int max =0;
+		int index =0;
+		for(int i=0; i< space.size(); i++) {
+			while(priorityQueue.size()<x && i< space.size()) {
+				priorityQueue.add(space.get(i));
+				i++;
+			}
+			i--;
+			if(priorityQueue.size()!=x) {
+				break;
+			}
+			int min = priorityQueue.peek();
+			max = Math.max(min, max);
+			priorityQueue.remove(space.get(index));
+			index++;
+		}
+		return max;
+	}	
+	public static void main(String[] args) {
+		List<Integer> space = new ArrayList<Integer>();
+		space.add(1);
+		space.add(2);
+		space.add(3);
+		space.add(5);
+		space.add(1);
+		System.out.println(Segment.segment(3, space));
+	}
+}
+//public class ElementFrequency{
+//    public int num;
+//    public int freq;
+//    public ElementFrequency(int num, int freq){
+//        this.num = num;
+//        this.freq = freq;
+//    }
+//}

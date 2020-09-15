@@ -1,0 +1,10 @@
+#Tomcat publish data
+#Mon Sep 14 22:14:12 EDT 2020
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\SaiDixit\\.m2\\repository\\org\\springframework\\spring-web\\5.2.1.RELEASE\\spring-web-5.2.1.RELEASE.jar=WEB-INF/lib/spring-web-5.2.1.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\SaiDixit\\.m2\\repository\\org\\springframework\\spring-web\\5.0.2.RELEASE\\spring-web-5.0.2.RELEASE.jar=WEB-INF/lib/spring-web-5.0.2.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:E\:\\Learning\\Spring\ Udemy\\web-customer-tracker\\WebContent\\WEB-INF\\lib\\spring-web-5.2.3.RELEASE-sources.jar=WEB-INF/lib/spring-web-5.2.3.RELEASE-sources.jar
+org.eclipse.jst.jee.server\:/binary\:E\:\\Learning\\Spring\ Udemy\\web-customer-tracker-aop\\WebContent\\WEB-INF\\lib\\spring-web-5.2.3.RELEASE.jar=WEB-INF/lib/spring-web-5.2.3.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\SaiDixit\\.m2\\repository\\org\\springframework\\spring-web\\5.0.6.RELEASE\\spring-web-5.0.6.RELEASE.jar=WEB-INF/lib/spring-web-5.0.6.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:E\:\\Learning\\Spring\ Udemy\\web-customer-tracker-aop\\WebContent\\WEB-INF\\lib\\spring-web-5.2.3.RELEASE-sources.jar=WEB-INF/lib/spring-web-5.2.3.RELEASE-sources.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\SaiDixit\\.m2\\repository\\org\\springframework\\spring-web\\5.0.5.RELEASE\\spring-web-5.0.5.RELEASE.jar=WEB-INF/lib/spring-web-5.0.5.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:E\:\\Learning\\Spring\ Udemy\\web-customer-tracker\\WebContent\\WEB-INF\\lib\\spring-web-5.2.3.RELEASE.jar=WEB-INF/lib/spring-web-5.2.3.RELEASE.jar

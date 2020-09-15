@@ -1,0 +1,44 @@
+import java.util.*; 
+
+public class SequenceConstruction {
+	
+	List<Integer> constructSequence(int num, int lowerEnd, int upperEnd){
+		ArrayList<Integer> invalid = new ArrayList<Integer>();
+		invalid.add(-1);
+		LinkedList<Integer> result = new LinkedList<Integer>();
+		
+		result.addFirst(upperEnd);
+		int lp = upperEnd-1;
+		if(lp>=lowerEnd && result.size()<num) {
+			result.addFirst(lp);
+			lp--;
+		}
+		int rp = upperEnd -1;
+		while(result.size()<num) {
+			if(rp<lowerEnd ) {
+				break;
+			}
+			result.addLast(rp);
+			rp--;
+		}
+		while(result.size()<num) {
+			if(lp<lowerEnd ) {
+				break;
+			}
+			result.addLast(lp);
+			lp--;
+		}
+		if(result.size() == num) {
+			return result;
+		}
+		
+		return invalid; 
+	}
+
+	public static void main(String[] args) {
+		List<Integer> result = new SequenceConstruction().constructSequence(5, 3, 10);
+		System.out.print(result);
+
+	}
+
+}

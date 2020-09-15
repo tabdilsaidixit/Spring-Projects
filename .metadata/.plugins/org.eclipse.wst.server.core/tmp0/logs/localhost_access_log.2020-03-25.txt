@@ -1,0 +1,14 @@
+127.0.0.1 - - [25/Mar/2020:22:56:23 -0400] "GET / HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [25/Mar/2020:22:56:24 -0400] "GET /spring-mvc-demo/ HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [25/Mar/2020:22:56:41 -0400] "GET /spring-mvc-demo/student/showForm HTTP/1.1" 200 393
+0:0:0:0:0:0:0:1 - - [25/Mar/2020:22:56:58 -0400] "POST /spring-mvc-demo/student/processForm HTTP/1.1" 200 158
+127.0.0.1 - - [25/Mar/2020:23:01:01 -0400] "GET / HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [25/Mar/2020:23:01:01 -0400] "GET /spring-mvc-demo/ HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [25/Mar/2020:23:01:11 -0400] "GET /spring-mvc-demo/student/ HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [25/Mar/2020:23:01:21 -0400] "GET /spring-mvc-demo/student/showPage HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [25/Mar/2020:23:01:28 -0400] "GET /spring-mvc-demo/student/displayPage HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [25/Mar/2020:23:01:45 -0400] "GET /spring-mvc-demo/student/showForm HTTP/1.1" 200 393
+127.0.0.1 - - [25/Mar/2020:23:03:16 -0400] "GET / HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [25/Mar/2020:23:03:17 -0400] "GET /spring-mvc-demo/ HTTP/1.1" 404 682
+0:0:0:0:0:0:0:1 - - [25/Mar/2020:23:03:26 -0400] "GET /spring-mvc-demo/student/showForm HTTP/1.1" 200 393
+0:0:0:0:0:0:0:1 - - [25/Mar/2020:23:03:35 -0400] "POST /spring-mvc-demo/student/processForm HTTP/1.1" 200 147

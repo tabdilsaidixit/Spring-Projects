@@ -1,0 +1,26 @@
+import java.util.*;
+public class DroppedRequests {
+	int droppedRequests(int num,List<Integer> requestTime ) {
+		int numberOfDroppedRequest = 0;
+		
+		TreeMap<Integer, Integer> treeMap = new TreeMap<Integer, Integer>();
+		for(Integer currentTime: requestTime) {
+			if(treeMap.containsKey(currentTime)) {
+				if(treeMap.get(currentTime)>=3) {
+					numberOfDroppedRequest++;
+				}
+				else {
+					treeMap.put(currentTime, treeMap.get(currentTime)+ 1);
+				}
+			}else {
+				treeMap.put(currentTime, 1);				
+			}
+		}
+		
+		List<Integer> uniqueTimestamps = TreeMap.keySet().iterator()
+		
+		
+		return numberOfDroppedRequest;
+	}
+
+}

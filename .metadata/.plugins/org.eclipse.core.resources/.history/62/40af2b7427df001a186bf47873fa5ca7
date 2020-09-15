@@ -1,0 +1,16 @@
+public class Tree {
+    int val;
+    Tree l;
+    Tree right;
+    Tree() {}
+    Tree(int val) { this.val = val; }
+    Tree(int val, Tree left, Tree right) {
+        this.val = val;
+        this.l = l;
+        this.right = right;
+    }
+	@Override
+	public String toString() {
+		return "TreeNode [val=" + val + "]";
+	}
+}

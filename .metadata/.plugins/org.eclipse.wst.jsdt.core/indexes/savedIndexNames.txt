@@ -1,0 +1,9 @@
+INDEX VERSION 1.4+E:\Learning\Spring Udemy\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3740802276.index
+706442332.index
+639892564.index
+716432529.index
+1106958239.index
+3689266956.index
+1598242088.index
+3509088546.index

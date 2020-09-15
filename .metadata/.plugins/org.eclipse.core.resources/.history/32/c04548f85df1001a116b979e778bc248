@@ -1,0 +1,86 @@
+package Amazon;
+
+import java.util.*;
+
+class TreeNode {
+	int val;
+	TreeNode left;
+	TreeNode right;
+	TreeNode(int val) {
+		this.val = val;
+	}
+
+	TreeNode(int val, TreeNode left, TreeNode right) {
+		this.val = val;
+		this.left = left;
+		this.right = right;
+	}
+}
+
+public class Solution {
+	public int bstDistance(int num, List<Integer> values, int node1, int node2) {
+		int distance = -1;
+		if (values == null || values.size() == 0) {
+			return distance;
+		}
+		TreeNode root = new TreeNode(values.get(0));
+		for (int i = 1; i < values.size(); i++) {
+			
+			insert(root, values.get(i));
+		}
+		
+		
+		return bstDistance(root, node1, node2);
+	}
+	
+
+	private void insert(TreeNode root, int number) {
+		TreeNode tempRoot = root;
+		while (tempRoot != null) {
+			if (tempRoot.val > number) {
+				if (tempRoot.left != null) {
+					tempRoot = tempRoot.left;
+				} else {
+					tempRoot.left = new TreeNode(number);
+					return;
+				}
+			} else {
+				if (tempRoot.right != null) {
+					tempRoot = tempRoot.right;
+				} else {
+					tempRoot.right = new TreeNode(number);
+					return;
+				}
+			}
+		}
+	}
+	
+	public int bstDistance(TreeNode root, int node1, int node2) {
+	    if (root == null) return -1;
+	    TreeNode lca = lca(root, node1, node2);
+	    return getDistance(lca, node1) + getDistance(lca, node2);
+	}
+
+	private int getDistance(TreeNode src, int dest) {
+	    if (src.val == dest) return 0;
+	    TreeNode node = src.left;
+	    if (src.val < dest) {
+	        node = src.right;
+	    }
+	    return 1 + getDistance(node, dest);
+	}
+
+	private TreeNode lca(TreeNode root, int node1, int node2) {
+	    while (true) {
+	        if (root.val > node1 && root.val > node2) {
+	            root = root.left;
+	        } else if (root.val < node1 && root.val < node2) {
+	            root = root.right;
+	        } else {
+	            return root;
+	        }
+	    }
+	}
+
+
+}

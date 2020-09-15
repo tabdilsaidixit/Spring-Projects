@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;treeSet&apos; in &apos;MinimumTimeDifference.findMinDifference(...)&apos; to &apos;hashSet&apos;&#x0D;&#x0A;- Original project: &apos;Leetcode&apos;&#x0D;&#x0A;- Original element: &apos;MinimumTimeDifference.findMinDifference(List&lt;String&gt;).treeSet&apos;&#x0D;&#x0A;- Renamed element: &apos;treeSet&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;treeSet&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{MinimumTimeDifference.java[MinimumTimeDifference~findMinDifference~QList\&lt;QString;&gt;;@treeSet!123!172!140!146!QHashSet\&lt;QInteger;&gt;;!0!false" name="hashSet" references="true" stamp="1585340416633" version="1.0"/>
+</session>

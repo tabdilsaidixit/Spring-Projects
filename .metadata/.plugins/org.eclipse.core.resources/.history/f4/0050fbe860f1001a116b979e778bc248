@@ -1,0 +1,97 @@
+package Test;
+
+// IMPORT LIBRARY PACKAGES NEEDED BY YOUR PROGRAM
+//SOME CLASSES WITHIN A PACKAGE MAY BE RESTRICTED
+//DEFINE ANY CLASS AND METHOD NEEDED
+import java.util.List;
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+
+//CLASS BEGINS, THIS CLASS IS REQUIRED
+class Solution {
+	
+	public ArrayList<String> popularNFeatures(int numFeatures, int topFeatures, List<String> possibleFeatures,
+			int numFeatureRequests, List<String> featureRequests) {
+		ArrayList<String> finalPossFeatures = new ArrayList<String>();
+		for(String str : possibleFeatures)
+			finalPossFeatures.add(str.toLowerCase());
+		
+		
+		Map<String, Integer> count = new HashMap<>();
+		// List<String> keywordsList = Arrays.asList(keywords);
+		for (String word : featureRequests) {
+			// for(String s:word.split("\\s+")){
+			for (String s : word.split("\\W")) {
+				String key = s.toLowerCase();
+				if (finalPossFeatures.contains(key)) {
+					count.put(key, count.getOrDefault(key, 0) + 1);
+				}
+			}
+		}
+
+		List<String> ls = new ArrayList<>(count.keySet());
+		Collections.sort(ls,
+				(a, b) -> (count.get(a)).equals(count.get(b)) ? a.compareTo(b) : count.get(b) - count.get(a));
+		
+		ArrayList<String> result = new ArrayList<String>();
+		for(int i=0; i<topFeatures; i++) {
+			result.add(ls.get(i));
+		}
+		return result;
+	}
+	// METHOD SIGNATURE BEGINS, THIS METHOD IS REQUIRED
+	public ArrayList<String> popularNFeatures1(int numFeatures, int topFeatures, List<String> possibleFeatures,
+			int numFeatureRequests, List<String> featureRequests) {
+//WRITE YOUR CODE HERE
+
+		HashMap<String, Integer> hmap = new HashMap<String, Integer>();
+		int value = 1;
+		for (String pf : possibleFeatures) {
+			value = 1;
+			for (String fr : featureRequests) {
+				if (fr.toLowerCase().contains(pf.toLowerCase()) && !hmap.containsKey(pf.toLowerCase())) {
+					hmap.put(pf, value);
+				} else if (fr.toLowerCase().contains(pf.toLowerCase()) && hmap.containsKey(pf.toLowerCase())) {
+					value = hmap.get(pf);
+					value++;
+					hmap.replace(pf, value);
+				} else {
+					hmap.put(pf, 0);
+				}
+			}
+		}
+
+		Integer[] valArr = new Integer[topFeatures];
+		ArrayList<Integer> valList = new ArrayList<Integer>();
+		valList.addAll(hmap.values());
+		Collections.sort(valList);
+
+		int x = 0;
+		for (int i = valList.size() - 1; i >= 0; i--) {
+			if (topFeatures > 0) {
+				valArr[x] = valList.get(i);
+				x++;
+				topFeatures--;
+			}
+		}
+
+		ArrayList<String> resultFeatures = new ArrayList<String>();
+		String k = null;
+		for (int i = valArr.length - 1; i >= 0; i--) {
+
+			for (Map.Entry entry : hmap.entrySet()) {
+				if (valArr[i].equals(entry.getValue())) {
+					k = (String) entry.getKey();
+					break; // breaking because its one to one map
+				}
+			}
+
+			resultFeatures.add(k);
+		}
+
+		return resultFeatures;
+
+	}
+}

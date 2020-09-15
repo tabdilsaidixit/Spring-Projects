@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=cruddemo/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.learning.springboot.cruddemo.dao{EmployeeDAO.java[EmployeeDAO" modifiers="513" timestamp="1587854875435"/>
+<typeInfo handle="=cruddemo/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.learning.springboot.cruddemo.service{EmployeeService.java[EmployeeService" modifiers="513" timestamp="1587855542738"/>
+<typeInfo handle="=cruddemo/C:\/Users\/SaiDixit\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/2.2.6.RELEASE\/spring-data-jpa-2.2.6.RELEASE.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-jpa=/=/maven.version=/2.2.6.RELEASE=/=/maven.scope=/compile=/&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1587852243514"/>
+</typeInfoHistroy>

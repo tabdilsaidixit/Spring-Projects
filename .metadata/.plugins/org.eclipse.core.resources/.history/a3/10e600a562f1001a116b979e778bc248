@@ -1,0 +1,38 @@
+package Test;
+
+// IMPORT LIBRARY PACKAGES NEEDED BY YOUR PROGRAM
+//SOME CLASSES WITHIN A PACKAGE MAY BE RESTRICTED
+//DEFINE ANY CLASS AND METHOD NEEDED
+import java.util.List;
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+
+//CLASS BEGINS, THIS CLASS IS REQUIRED
+class Solution {
+	
+	public ArrayList<String> popularNFeatures(int numFeatures, int topFeatures, List<String> possibleFeatures,
+			int numFeatureRequests, List<String> featureRequests) {
+		ArrayList<String> lowerCasedPossibleFeatures = new ArrayList<String>();
+		for(String feature : possibleFeatures)
+			lowerCasedPossibleFeatures.add(feature.toLowerCase());
+		
+		
+		HashMap<String, Integer> count = new HashMap<>();
+		for (String currentRequest : featureRequests) {
+			for (String word : currentRequest.split(" ")) {
+				String currentWord = word.toLowerCase();
+				if (lowerCasedPossibleFeatures.contains(currentWord)) {
+					count.put(currentWord, count.getOrDefault(currentWord, 0) + 1);
+				}
+			}
+		}
+
+		List<String> featuresRequested = new ArrayList<>(count.keySet());
+		Collections.sort(featuresRequested,
+				(a, b) -> (count.get(a)).equals(count.get(b)) ? a.compareTo(b) : count.get(b) - count.get(a));
+		
+		return new ArrayList<String>(featuresRequested.subList(0, topFeatures));
+	}
+}

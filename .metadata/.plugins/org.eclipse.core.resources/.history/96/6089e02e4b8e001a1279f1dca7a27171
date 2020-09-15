@@ -1,0 +1,75 @@
+import java.util.Comparator;
+import java.util.PriorityQueue;
+import java.util.Stack;
+
+public class BackSpace {
+	public boolean backspaceCompare(String S, String T) {
+        String finalS = getFinalString(S);
+        String finalT = getFinalString(T);
+        if(finalS.compareTo(finalT) == 0){
+            return true;
+        }
+        return false;
+    }
+	
+	public void printArray(int[][] arr) {
+		for(int i=0; i<arr.length; i++) {
+			for(int j=0; j<arr[0].length; j++) {
+				System.out.print(arr[i][j] + "   ");
+			}
+			System.out.println();
+		}
+	}
+	public boolean checkValidString(String s) {
+        int countMin = 0;
+        int countMax = 0;
+        for(char ch: s.toCharArray()){
+            if(ch == '('){
+                countMin++;
+                countMax++;
+            }
+            else if(ch == ')'){
+                countMin--;
+                countMax--;
+            }
+            else if(ch == '*'){
+                countMin--;
+                countMax++;
+            }
+            
+            if(countMax<0){
+                return false;
+            }
+            
+            countMin = Math.max(0, countMin);
+        }
+        
+        return countMin == 0 ;
+    }
+    public String getFinalString(String str){
+    	Integer in = new Integer(0);
+        Stack<Character> stack = new Stack<Character>();
+        stack.stream().sorted().findFirst().get();
+        char[] charArray = str.toCharArray();
+        for(char cha: charArray){
+            if(cha == '#'){
+                if(!stack.isEmpty()){
+                    stack.pop();
+                }
+            }
+            else{
+                
+            stack.push(cha);
+            }
+        }
+        
+        StringBuilder sb= new StringBuilder();
+        while(!stack.isEmpty()){
+            sb.append(stack.pop());
+        }
+        return sb.toString();
+    }
+    public static void main(String[] args) {
+		new BackSpace().checkValidString("(*)");
+	}
+}
